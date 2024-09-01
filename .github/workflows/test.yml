@@ -1,0 +1,17 @@
+name: Validate attendee
+
+on: [pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      username: "${{ github.actor }}"
+    steps:
+      - uses: actions/checkout@v4
+      - name: Username file exists
+        run: |
+          [ -e "attendees/$username.txt" ]
+      - name: Verify contents
+        run: |
+          grep "My GitHub username is $username." attendees/$username.txt
