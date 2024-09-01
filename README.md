@@ -29,6 +29,34 @@ Future topics: GH Actions, GH Pages, ???
 
 ### What is Git?
 
+Reference: https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F
+
+Cheatsheet: https://ndpsoftware.com/git-cheatsheet.html#loc=index
+
+### Install Git
+
+Download installer here: https://git-scm.com/downloads
+
+One-time setup:
+
+```
+git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com
+
+# Optional
+git config --global init.defaultBranch main
+```
+
+### Create your first repo
+
+```
+mkdir -p ~/repos/hello-git
+
+cd ~/repos/hello-git
+
+git init .
+```
+
 ### Basic CLI commands
 
 * `git status`
@@ -50,13 +78,15 @@ Use this to ignore files you don't want to track.
 ### Advanced CLI commands
 
 * `git grep`: Grep, but ignores `.git/` and `.gitignore` matches
-* `git show`: like `status` but shows latest commit message and content
-* `git stash` / `git stash apply`: stow away changes for later use
+* **[x]** `git stash` / `git stash apply`: stow away changes for later use
 * `git diff HEAD~1`: diff HEAD against previous commit (adjust number as needed)
 * `git add -i`: interactive staging, select multiple files to stage
-* `git add -p`: add patches, allows staging only parts of your changes
+* **[x]** `git add -p`: add patches, allows staging only parts of your changes
 * `git commit -p`: same as above, but also commit
-* `git rebase -i`: interactive rebase, reorder/merge/drop **local** commits
+* **[x]** `git rebase -i`: interactive rebase, reorder/merge/drop **local** commits
+* **[x]** `git tag`: tagging commits (i.e., releases)
+* `git show`: like `status` but shows latest commit message and content
+
 
 ## GitHub
 
