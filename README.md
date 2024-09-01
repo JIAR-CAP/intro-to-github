@@ -9,7 +9,7 @@ Playground repo: https://github.com/JIAR-CAP/intro-to-git-and-github-playground
 **Pre-req**: create your first GitHub repo to be used for rest of this section.
 
 1. What is Git, brief history, motivation
-2. Basic CLI commands: clone/add/restore/commit/log
+2. Basic CLI commands: init/add/restore/commit/log
 3. More commands
 4. Branching
 5. Using Git in VS Code
@@ -17,18 +17,17 @@ Playground repo: https://github.com/JIAR-CAP/intro-to-git-and-github-playground
 
 ### GitHub
 
-1. Create a repo (mostly covered, but more detail)
+1. Fork playground repo
 2. Open an issue
 3. Create a pull request (PR) from a local branch
-4. Fork a repo
-5. Create a pull request from a fork
+4. Fork main repo
+5. Create a pull request from the fork
 
 Future topics: GH Actions, GH Pages, ???
 
 ## Git
 
 ### What is Git?
-
 
 ### Basic CLI commands
 
@@ -66,9 +65,10 @@ Repo: https://github.com/JIAR-CAP/intro-to-git-and-github
 > [!NOTE]
 > **Instructor**: Mark the repo as public.
 
-1. Open an issue to add your name to the students list (`students.yml`)
+1. Open an issue to add a new file under `attendees`.
 2. Fork the repo.
 3. Open a PR to add your name & close the issue you created.
+    * Filename should match your username
 
 ## Resources
 
