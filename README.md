@@ -4,46 +4,178 @@ Playground repo: https://github.com/JIAR-CAP/intro-to-git-and-github-playground
 
 ## Outline
 
-### Git
+1. What is Git? Brief history, motivation
+2. What is a Git repo?
+3. Create a new repo
+4. Basic Git operations using GitHub Desktop
+5. Push your changes to GitHub
+6. More commands
+7. Branching
+8. Fork playground repo
+9. Create a pull request (PR) from a local branch
+10. Fork main repo
+11. Open an issue in main repo
+12. Create a pull request from your fork
 
-**Pre-req**: create your first GitHub repo to be used for rest of this section.
+## First-Time Setup
 
-1. What is Git, brief history, motivation
-2. Basic CLI commands: init/add/restore/commit/log
-3. More commands
-4. Branching
-5. Using Git in VS Code
-6. ???
+### (1) Create a GitHub account
 
-### GitHub
+Create a GitHub account: https://github.com/join/
 
-1. Fork playground repo
-2. Open an issue
-3. Create a pull request (PR) from a local branch
-4. Fork main repo
-5. Create a pull request from the fork
+### (2) Install GitHub Desktop
 
-## Git
+https://desktop.github.com/download/
 
-### What is Git?
+### (3) Install Git
+
+#### Windows
+
+Download & install Git: https://git-scm.com/download/win
+
+#### macOS
+
+1. Install Homebrew: https://brew.sh/
+
+Open Terminal and paste the command on that page, then hit Enter.
+
+2. Install Git:
+
+```
+brew install git
+```
+
+#### Linux
+
+Run one of these commands based on your Linux distro: https://git-scm.com/download/linux
+
+## What is Git?
 
 Reference: https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F
 
 Cheatsheet: https://ndpsoftware.com/git-cheatsheet.html#loc=index
 
-### Install Git
+## What is a Git repository (repo)?
 
-Download installer here: https://git-scm.com/downloads
+TODO.
 
-One-time setup from your terminal (`macOS: Terminal` or `Windows: Git Bash`):
+## Create your first repo
+
+Open GitHub Desktop and click on "Create a New Repository on Local Drive":
+
+![Create a repo](_images/001-create-repo.png)
+
+Fill in the following information:
+
+* Repository name: `hello-git`
+* Description: `My first Git repo.`
+* Keep everything else as-is.
+
+### Navigating the GitHub Desktop UI
+
+The UI shows you some important info (starting from top left):
+
+* Name of the current repo (you can switch between them)
+* Name of the current *branch* (`main`)
+    * We'll get into what a branch is later.
+* Publish to GitHub button
+* On the left pane: current changes
+* Bottom left: create a *commit*
+* Middle: open this repo in your editor
+
+## Basic Git operations using UI
+
+### Create a new file
+
+Let's create a file at the root called `hello.txt` with the following content:
 
 ```
-git config --global user.name "John Doe"
-git config --global user.email johndoe@example.com
-
-# Optional
-git config --global init.defaultBranch main
+Hello world!
 ```
+
+Save this file and switch back to GitHub Desktop. You should see that `hello.txt` has been created:
+
+![Changes](_images/002-changes.png)
+
+### Commit your changes
+
+Write a short commit message and click "Commit". Check history to confirm.
+
+### Make some changes to file
+
+```
+Hello world!
+
+This is another line.
+```
+
+Then commit!
+
+## GitHub
+
+Clone the playground repo: https://github.com/JIAR-CAP/intro-to-git-and-github-playground
+
+![Clone a repo to desktop](_images/010-clone-to-desktop.png)
+
+### Push changes to GitHub
+
+Click button in UI to push your changes.
+
+### Pull changes from GitHub
+
+Make a change to the README on GitHub, then commit via UI.
+
+Navigate to GHD and click "Fetch origin".
+
+### Create a Pull Request (PR): Add your username to the repo
+
+Create a new branch in the GHD UI called `add-username`.
+
+Add your username in two places:
+
+1. New file under the `add-your-username-file` folder named `<username>.txt`
+2. New entry in `add-your-username.yml`
+
+Commit & push to GitHub. Visit GitHub UI to create a new pull request (PR).
+
+### Create a Pull Request (PR): Implement the multiply CLI in Python
+
+Task: implement a `multiply` CLI subcommand and add a new test for it.
+
+Create a new branch in GHD UI called `implement-multiply`.
+
+Commit your change(s) to the branch, then push the branch to GitHub and open a PR.
+
+### Create a Pull Request (PR) from a fork
+
+Repo: https://github.com/JIAR-CAP/intro-to-git-and-github
+
+1. Open an issue to add a new file under `attendees`.
+2. Fork the main repo: https://github.com/JIAR-CAP/intro-to-git-and-github
+    * Click
+3. Open a PR to add your name & close the issue you created.
+    * Filename should match your username, otherwise CI checks will fail :)
+
+### Future Topics
+
+GH Actions, GH Pages, ???
+
+## Resources
+
+### Videos
+
+* Git & GH Desktop tutorial: https://www.youtube.com/watch?v=8Dd7KRpKeaE
+
+### Text
+
+* Git book: https://git-scm.com/book/en/v2
+* Git cheatsheet: https://ndpsoftware.com/git-cheatsheet.html#loc=index;
+* Git in VS Code: https://code.visualstudio.com/docs/sourcecontrol/intro-to-git
+* GitHub cheatsheet: https://training.github.com/downloads/github-git-cheat-sheet.pdf 
+
+## Appendix
+
+### Git CLI
 
 ### Create your first repo
 
@@ -110,10 +242,6 @@ Restore the stashed changes:
 git stash apply
 ```
 
-### Git in VS Code
-
-https://code.visualstudio.com/docs/sourcecontrol/intro-to-git
-
 ### Advanced CLI commands
 
 * `git grep`: Grep, but ignores `.git/` and `.gitignore` matches
@@ -124,11 +252,7 @@ https://code.visualstudio.com/docs/sourcecontrol/intro-to-git
 * **[x]** `git tag`: tagging commits (i.e., releases)
 * `git show`: like `status` but shows latest commit message and content
 
-### Future Topics
-
-Worktrees, ???
-
-## GitHub
+## GitHub via Terminal
 
 ### Prerequisite: Setup SSH
 
@@ -173,13 +297,6 @@ Create a new branch locally:
 git checkout -b add-my-username
 ```
 
-Add your username to two places:
-
-1. New file under the `add-your-username-file` folder.
-2. Entry in `add-your-username.yml`
-
-Commit & push to GitHub. Visit GitHub UI to create a new pull request (PR).
-
 ### Create a Pull Request (PR): Implement the multiply CLI in Python
 
 Task: implement a `multiply` CLI subcommand and add a test for it.
@@ -193,26 +310,4 @@ git checkout -b multiply
 Commit your change(s) to the branch, then push the branch to GitHub.
 
 You can now open a PR and merge it. Explain: merge vs. squash.
-
-### Create a Pull Request (PR) from a fork
-
-1. Open an issue to add a new file under `attendees`.
-2. Fork the main repo: https://github.com/JIAR-CAP/intro-to-git-and-github
-3. Open a PR to add your name & close the issue you created.
-    * Filename should match your username
-
-### Future Topics
-
-GH Actions, GH Pages, ???
-
-## Resources
-
-### Git
-
-* Git book: https://git-scm.com/book/en/v2
-* Git cheatsheet: https://ndpsoftware.com/git-cheatsheet.html#loc=index;
-
-### GitHub
-
-* GitHub cheatsheet: https://training.github.com/downloads/github-git-cheat-sheet.pdf 
 
