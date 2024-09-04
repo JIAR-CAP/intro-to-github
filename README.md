@@ -4,18 +4,19 @@ Playground repo: https://github.com/JIAR-CAP/intro-to-git-and-github-playground
 
 ## Outline
 
-1. What is Git? Brief history, motivation
-2. What is a Git repo?
-3. Create a new repo
-4. Basic Git operations using GitHub Desktop
-5. Push your changes to GitHub
-6. More commands
-7. Branching
-8. Fork playground repo
-9. Create a pull request (PR) from a local branch
-10. Fork main repo
-11. Open an issue in main repo
-12. Create a pull request from your fork
+1. Setup
+2. What is Git? Brief history, motivation
+3. What is a Git repo?
+4. Create a new repo
+5. Basic Git operations using GitHub Desktop
+6. Push your changes to GitHub
+7. More commands
+8. Branching
+9. Fork playground repo
+10. Create a pull request (PR) from a local branch
+11. Fork main repo
+12. Open an issue in main repo
+13. Create a pull request from your fork
 
 ## First-Time Setup
 
@@ -55,11 +56,15 @@ Reference: https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F
 
 Cheatsheet: https://ndpsoftware.com/git-cheatsheet.html#loc=index
 
-## What is a Git repository (repo)?
+## What is a Git repo[sitory]?
 
-TODO.
+A Git repo is basically a folder on your disk. Git can track changes inside this folder and allows you to manually build a history of changes.
 
-## Create your first repo
+The data/information required to implement this is located in a hidden directory at the root of the folder called `.git/`.
+
+The Git application exposes a bunch of commands you can run via a terminal interface (or command-line interface, CLI). These commands read from and write to the aforementioned `.git/` folder.
+
+## Create your Git first repo using GitHub Desktop
 
 Open GitHub Desktop and click on "Create a New Repository on Local Drive":
 
@@ -83,7 +88,9 @@ The UI shows you some important info (starting from top left):
 * Bottom left: create a *commit*
 * Middle: open this repo in your editor
 
-## Basic Git operations using UI
+Reference: https://docs.github.com/en/desktop/overview/creating-your-first-repository-using-github-desktop#part-2-creating-a-new-repository
+
+## Basic Git operations using GitHub Desktop
 
 ### Create a new file
 
@@ -97,11 +104,21 @@ Save this file and switch back to GitHub Desktop. You should see that `hello.txt
 
 ![Changes](_images/002-changes.png)
 
-### Commit your changes
+### Commit the change
 
-Write a short commit message and click "Commit". Check history to confirm.
+Write a short commit message and click "Commit". Click the "History" tab in the sidebar to see your commit history.
 
-### Make some changes to file
+### Bonus: Inspect the Git repo on disk
+
+In a terminal (Terminal on macOS, Git Bash on Windows):
+
+```
+ls -la ~/Documents/GitHub/hello-git/
+```
+
+### Make some changes to the file
+
+Example:
 
 ```
 Hello world!
@@ -109,27 +126,57 @@ Hello world!
 This is another line.
 ```
 
-Then commit!
+Save the file in your editor. Now navigate over to GHD UI, and you'll see the changes. Then commit!
 
-## GitHub
+### Undo saved changes
 
-Clone the playground repo: https://github.com/JIAR-CAP/intro-to-git-and-github-playground
+Delete the word "Hello" (or make any other change). Then save & exit your editor. Oops - how do we undo this?
 
-![Clone a repo to desktop](_images/010-clone-to-desktop.png)
+Head over to GHD, and you'll see the changes tracked by Git. Right-click on the changed file in the sidebar, and click "Discard Changes".
 
-### Push changes to GitHub
+### Revert a commit
 
-Click button in UI to push your changes.
+Navigate to the "History" tab in the sidebar. Right-click the top commit and select "Revert changes in commit".
 
-### Pull changes from GitHub
+This creates a *new* commit that is an undo of the selected commit.
+
+### TODO
+
+## Publish your repo to GitHub
+
+At the top-right of the UI, click on the "Publish repository" button. This will push the repo to your GitHub account.
+
+This works as a backup of your code. It also allows you to easily share your code with others.
+
+Reference: https://docs.github.com/en/desktop/overview/creating-your-first-repository-using-github-desktop#part-4-publishing-your-repository-to-github
+
+## Pull changes from GitHub
 
 Make a change to the README on GitHub, then commit via UI.
 
 Navigate to GHD and click "Fetch origin".
 
-### Create a Pull Request (PR): Add your username to the repo
+## Fork an existing GitHub repo
 
-Create a new branch in the GHD UI called `add-username`.
+A fork is basically a copy of an existing GitHub repo, but stored under your account.
+
+Forks allow you to experiment locally with a repo. They are also a crucial part of the open source contribution workflow - a fork allows you to propose changes to the original repo.
+
+Fork the playground repo: https://github.com/JIAR-CAP/intro-to-git-and-github-playground
+
+To fork it, click the "Fork" button at the top right.
+
+## Clone a repo
+
+Head over to the UI, click the "Current repo" button on the top-left, then "Add", then "Clone repo". Select the repo you just forked - `<your-username>/intro-to-git-and-github-playground`.
+
+Make sure to select "For my own purposes" in the UI when prompted. This question only pops up for forks, not regular clones.
+
+![Clone a repo](_images/005-fork-a-repo.png)
+
+## Create a Pull Request (PR): Add your username to the repo
+
+Create a new branch in the UI called `add-username`.
 
 Add your username in two places:
 
@@ -138,7 +185,7 @@ Add your username in two places:
 
 Commit & push to GitHub. Visit GitHub UI to create a new pull request (PR).
 
-### Create a Pull Request (PR): Implement the multiply CLI in Python
+## Create a Pull Request (PR): Implement the multiply CLI in Python
 
 Task: implement a `multiply` CLI subcommand and add a new test for it.
 
@@ -146,17 +193,18 @@ Create a new branch in GHD UI called `implement-multiply`.
 
 Commit your change(s) to the branch, then push the branch to GitHub and open a PR.
 
-### Create a Pull Request (PR) from a fork
+## Create a Pull Request (PR) from a fork
 
-Repo: https://github.com/JIAR-CAP/intro-to-git-and-github
 
-1. Open an issue to add a new file under `attendees`.
-2. Fork the main repo: https://github.com/JIAR-CAP/intro-to-git-and-github
-    * Click
-3. Open a PR to add your name & close the issue you created.
+1. Fork the main repo: https://github.com/JIAR-CAP/intro-to-git-and-github
+    * Click the "Fork" button on the top right on the website.
+2. Clone the repo to GHD UI. This time, select "To contribute to the parent project" when prompted.
+3. Open an issue to add a new file under `attendees`.
+4. Open a PR to add your name & close the issue you created.
     * Filename should match your username, otherwise CI checks will fail :)
+    * Reference the issue you created in the body of the PR - e.g., `Fixes #5`. This will ensure that the issue is closed when the PR is merged.
 
-### Future Topics
+## Future Topics
 
 GH Actions, GH Pages, ???
 
