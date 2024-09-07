@@ -52,7 +52,7 @@ The data required to implement this functionality is located in a hidden directo
 
 The Git application exposes a bunch of commands you can run via a terminal interface (or command-line interface, CLI). These commands read from and write to the aforementioned `.git/` folder.
 
-## Create your Git first repo using GitHub Desktop
+## Create your first Git repo using GitHub Desktop
 
 Open GitHub Desktop and click on "Create a New Repository on Local Drive":
 
@@ -64,7 +64,7 @@ Fill in the following information:
 * Description: `My first Git repo.`
 * Keep everything else as-is.
 
-### Navigating the GitHub Desktop UI
+## Navigating the GitHub Desktop UI
 
 The UI shows you some important info (starting from top left):
 
@@ -122,14 +122,6 @@ Delete the word "Hello" (or make any other change). Then save & exit your editor
 
 Head over to GHD, and you'll see the changes tracked by Git. Right-click on the changed file in the sidebar, and click "Discard Changes".
 
-### Revert a commit
-
-Navigate to the "History" tab in the sidebar. Right-click the top commit and select "Revert changes in commit".
-
-This creates a *new* commit that is an undo of the selected commit.
-
-### ???
-
 ## Publish your repo to GitHub
 
 At the top-right of the UI, click on the "Publish repository" button. This will push the repo to your GitHub account.
@@ -142,6 +134,48 @@ Reference: https://docs.github.com/en/desktop/overview/creating-your-first-repos
 
 Make a change to the README file on GitHub, then commit via UI. Navigate to GHD and click "Fetch origin".
 
+## Branching
+
+https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging
+
+### Create a new branch
+
+Click the "Current branch" dropdown. Enter `add-new-file` as the name and click "New Branch".
+
+If you look at the dropdown, you'll see that `add-new-file` is now active.
+
+### Commit to new branch
+
+Create a new file called `new-file.txt`. Fill in any content. Commit this to the new branch.
+
+### Switch branch
+
+Using the dropdown, switch back to `main` branch. You'll see that the commit adding `new-file.txt` is gone. Also, the file itself doesn't exist.
+
+If you switch back to `add-new-file`, the file will be back.
+
+### Merge changes back into main
+
+Switch back to the `main` branch. Click on `Branch` > `Merge into current branch`. Then select `add-new-file`. This will "merge" any commits in `add-new-file` that are *not* present in `main`.
+
+Once this is done, you should see the same commit in `main` and the new file should be present.
+
+## Advanced Git topics
+
+### Revert a commit
+
+Navigate to the "History" tab in the sidebar. Right-click the top commit and select "Revert changes in commit".
+
+This creates a *new* commit that is an undo of the selected commit.
+
+### Rebasing
+
+TODO
+
+### `.gitignore`
+
+TODO
+
 ## Fork an existing GitHub repo
 
 A fork is basically a copy of an existing GitHub repo, but stored under your account.
@@ -152,7 +186,7 @@ Fork the playground repo: https://github.com/JIAR-CAP/intro-to-git-and-github-pl
 
 To fork it, click the "Fork" button at the top right.
 
-## Clone a repo
+## Clone a repo in GitHub Desktop
 
 Head over to the UI, click the "Current repo" button on the top-left, then "Add", then "Clone repo". Select the repo you just forked - `<your-username>/intro-to-git-and-github-playground`.
 
@@ -180,7 +214,6 @@ Create a new branch in GHD UI called `implement-multiply`.
 Commit your change(s) to the branch, then push the branch to GitHub and open a PR.
 
 ## Create a Pull Request (PR) from a fork
-
 
 1. Fork the main repo: https://github.com/JIAR-CAP/intro-to-git-and-github
     * Click the "Fork" button on the top right on the website.
