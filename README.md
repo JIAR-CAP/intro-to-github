@@ -1,7 +1,5 @@
 # Introduction to Git & GitHub
 
-Playground repo: https://github.com/JIAR-CAP/intro-to-git-and-github-playground
-
 ## Outline
 
 1. Setup
@@ -28,29 +26,19 @@ Create a GitHub account: https://github.com/join/
 
 https://desktop.github.com/download/
 
-### (3) Install Git
-
-#### Windows
-
-Download & install Git: https://git-scm.com/download/win
-
-#### macOS
-
-1. Install Homebrew: https://brew.sh/
-
-Open Terminal and paste the command on that page, then hit Enter.
-
-2. Install Git:
-
-```
-brew install git
-```
-
-#### Linux
-
-Run one of these commands based on your Linux distro: https://git-scm.com/download/linux
-
 ## What is Git?
+
+### What is "version control"?
+
+https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control
+
+Further reading: https://www.atlassian.com/git/tutorials/what-is-version-control
+
+### History of Git
+
+https://git-scm.com/book/en/v2/Getting-Started-A-Short-History-of-Git
+
+### Overview
 
 Reference: https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F
 
@@ -60,7 +48,7 @@ Cheatsheet: https://ndpsoftware.com/git-cheatsheet.html#loc=index
 
 A Git repo is basically a folder on your disk. Git can track changes inside this folder and allows you to manually build a history of changes.
 
-The data/information required to implement this is located in a hidden directory at the root of the folder called `.git/`.
+The data required to implement this functionality is located in a hidden directory at the root of the repo called `.git/`.
 
 The Git application exposes a bunch of commands you can run via a terminal interface (or command-line interface, CLI). These commands read from and write to the aforementioned `.git/` folder.
 
@@ -140,7 +128,7 @@ Navigate to the "History" tab in the sidebar. Right-click the top commit and sel
 
 This creates a *new* commit that is an undo of the selected commit.
 
-### TODO
+### ???
 
 ## Publish your repo to GitHub
 
@@ -152,9 +140,7 @@ Reference: https://docs.github.com/en/desktop/overview/creating-your-first-repos
 
 ## Pull changes from GitHub
 
-Make a change to the README on GitHub, then commit via UI.
-
-Navigate to GHD and click "Fetch origin".
+Make a change to the README file on GitHub, then commit via UI. Navigate to GHD and click "Fetch origin".
 
 ## Fork an existing GitHub repo
 
@@ -223,9 +209,31 @@ GH Actions, GH Pages, ???
 
 ## Appendix
 
+### Install Git
+
+#### Windows
+
+Download & install Git: https://git-scm.com/download/win
+
+#### macOS
+
+1. Install Homebrew: https://brew.sh/
+
+Open Terminal and paste the command on that page, then hit Enter.
+
+2. Install Git:
+
+```
+brew install git
+```
+
+#### Linux
+
+Run one of these commands based on your Linux distro: https://git-scm.com/download/linux
+
 ### Git CLI
 
-### Create your first repo
+#### Create your first repo
 
 ```
 mkdir -p ~/repos/hello-git
@@ -235,7 +243,7 @@ cd ~/repos/hello-git
 git init .
 ```
 
-### Basic CLI commands
+#### Basic CLI commands
 
 * `git status`
 * `git diff`
@@ -245,11 +253,11 @@ git init .
 * `git push`
 * `git commit --amend`
 
-### `.gitignore`
+#### `.gitignore`
 
 Use this to ignore files you don't want to track.
 
-### Branching and merging
+#### Branching and merging
 
 Create a new local branch:
 
@@ -276,7 +284,7 @@ Merge changes on branch back to main:
 git merge my-new-branch
 ```
 
-### Stashing Changes
+#### Stashing Changes
 
 Stash away changes temporarily (acts as a stack):
 
@@ -290,7 +298,7 @@ Restore the stashed changes:
 git stash apply
 ```
 
-### Advanced CLI commands
+#### Advanced CLI commands
 
 * `git grep`: Grep, but ignores `.git/` and `.gitignore` matches
 * `git diff HEAD~1`: diff HEAD against previous commit (adjust number as needed)
